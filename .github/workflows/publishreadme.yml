@@ -20,8 +20,8 @@ jobs:
         run: npm version patch -m "updated README"
       - name: Git Push
         run: |
-          git push "https://${{ GITHUB_ACTOR }}:${{ secrets.GITHUB_TOKEN }}@github.com/cotyhamilton/test.git" master
-          git push "https://${{ GITHUB_ACTOR }}:${{ secrets.GITHUB_TOKEN }}@github.com/cotyhamilton/test.git" --tags
+          git push "https://$GITHUB_ACTOR:$secrets.GITHUB_TOKEN@github.com/cotyhamilton/test.git" master
+          git push "https://$GITHUB_ACTOR:$secrets.GITHUB_TOKEN@github.com/cotyhamilton/test.git" --tags
       - name: Publish Package
         run: npm publish --access public --tag beta
         env:

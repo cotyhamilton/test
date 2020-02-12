@@ -12,7 +12,7 @@ jobs:
             node-version: 12
             registry-url: https://registry.npmjs.org/
       - name: Check latest package version
-      - run: |
+        run: |
           latest=$(npm view strapi-hook-redis-connection@latest version)
           beta=$(npm view strapi-hook-redis-connection@beta version)
           echo "latest: $latest\nbeta: $beta"
@@ -24,9 +24,9 @@ jobs:
               npm version --no-git-tag-version $(npm view @cotyhamilton/test@latest version) --allow-same-version
           fi
       - name: Version Package
-      - run: npm version --no-git-tag-version prerelease --preid=beta
+        run: npm version --no-git-tag-version prerelease --preid=beta
       - name: Publish Package
-      - run: npm publish --access public --tag beta
+        run: npm publish --access public --tag beta
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
       

@@ -16,12 +16,16 @@ jobs:
         with:
             node-version: 12
             registry-url: https://registry.npmjs.org/
+      - name: Git Config
+        run: |
+          git config --global user.email "cotyhamilton@gmail.com"
+          git config --global user.name "cotyhamilton"
       - name: Version Package
         run: npm version patch -m "updated README"
       - name: Git Push
         run: |
-          git push "https://$GITHUB_ACTOR:$secrets.GITHUB_TOKEN@github.com/cotyhamilton/test.git" master
-          git push "https://$GITHUB_ACTOR:$secrets.GITHUB_TOKEN@github.com/cotyhamilton/test.git" --tags
+          git push "https://$secrets.GITHUB_TOKEN@github.com/cotyhamilton/test.git" master
+          git push "https://$secrets.GITHUB_TOKEN@github.com/cotyhamilton/test.git" --tags
       - name: Publish Package
         run: npm publish --access public --tag beta
         env:

@@ -9,8 +9,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Run a one-line script
-      run: testVar=test
     - name: Run a multi-line script
       run: |
+        testVar=testy
         echo $testVar

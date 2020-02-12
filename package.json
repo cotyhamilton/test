@@ -1,0 +1,22 @@
+{
+  "name": "@cotyhamilton/test",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"no tests yet\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cotyhamilton/test.git"
+  },
+  "keywords": [
+    "test"
+  ],
+  "author": "cotyhamilton",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cotyhamilton/test/issues"
+  },
+  "homepage": "https://github.com/cotyhamilton/test#readme"
+}

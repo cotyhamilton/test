@@ -11,7 +11,6 @@ jobs:
         with:
             node-version: 12
             registry-url: https://registry.npmjs.org/
-      - name: Run a multi-line script
       - run: |
           latest=$(npm view strapi-hook-redis-connection@latest version)
           beta=$(npm view strapi-hook-redis-connection@beta version)

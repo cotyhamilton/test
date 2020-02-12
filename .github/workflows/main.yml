@@ -8,6 +8,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
+        with:
+            node-version: 12
+            registry-url: https://registry.npmjs.org/
       - name: Run a multi-line script
       - run: |
           latest=$(npm view strapi-hook-redis-connection@latest version)

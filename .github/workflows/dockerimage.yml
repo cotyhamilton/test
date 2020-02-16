@@ -1,0 +1,26 @@
+name: Docker Image CI
+
+on:
+  push:
+    paths:
+      - folder
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Login
+      run: echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+    - name: Build the Docker image
+      run: docker build -t "$DOCKER_USERNAME/$APP_NAME:$(date +%s)" .
+      working-directory: folder
+    - name: Build the Docker image
+      run: docker push "$DOCKER_USERNAME/$APP_NAME"
+    env:
+          DOCKER_USERNAME: ${{ cotyhamilton }}
+          DOCKER_PASSWORD: ${{ secrets.docker_password }}
+          APP_NAME: test-app

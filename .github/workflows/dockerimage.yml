@@ -18,6 +18,6 @@ jobs:
     - name: Build the Docker image
       run: docker push "$DOCKER_USERNAME/$APP_NAME"
     env:
-          DOCKER_USERNAME: ${{ cotyhamilton }}
+          DOCKER_USERNAME: cotyhamilton
           DOCKER_PASSWORD: ${{ secrets.docker_password }}
           APP_NAME: test-app
